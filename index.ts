@@ -1,8 +1,58 @@
-import { registerRootComponent } from 'expo';
-
+import { Navigation } from 'react-native-navigation';
 import App from './App';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
-registerRootComponent(App);
+
+Navigation.registerComponent('com.myApp.HomeScreen', () => App);
+
+Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setRoot({
+        root: {
+            bottomTabs: {
+                children: [
+                    {
+                        stack: {
+                            children: [
+                                {
+                                    component: {
+                                        name: 'com.myApp.HomeScreen',
+                                        options: {
+                                            bottomTab: {
+                                                text: 'ホーム',
+                                            },
+                                            topBar: {
+                                                title: {
+                                                    text: 'ホーム'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        stack: {
+                            children: [
+                                {
+                                    component: {
+                                        name: 'com.myApp.HomeScreen',
+                                        options: {
+                                            bottomTab: {
+                                                text: '設定'
+                                            },
+                                            topBar: {
+                                                title: {
+                                                    text: '設定'
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    });
+});

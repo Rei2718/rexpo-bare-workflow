@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "rexpo-bare-workflow",
-    "slug": "rexpo-bare-workflow",
-    "version": "1.0.0",
+    "name": "rexpo",
+    "slug": "rexpo",
+    "version": "3.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,7 +21,8 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.ichi.rexpo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
